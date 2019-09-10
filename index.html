@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>仿QQ列表-demo</title>
+    <link rel="stylesheet" href="./style.css">
+
+
+    <script>
+        window.onload = function () {
+            var oUl = document.getElementById('list')
+            var aH2 = oUl.getElementsByTagName('h2')
+            var aUl = oUl.getElementsByTagName('ul')
+            var aLi = null
+            var arrLi = []
+
+            for (var i = 0; i < aH2.length; i++) {
+                aH2[i].index = i;
+                aH2[i].onclick = function () {
+                    if (aH2[this.index].className == '') {
+                        aUl[this.index].style.display = 'block'
+                        aH2[this.index].className = 'active'
+                    } else {
+                        aUl[this.index].style.display = 'none'
+                        aH2[this.index].className = ''
+                    }
+
+                }
+
+            }
+            for (i = 0; i < aUl.length; i++) {
+                aLi = aUl[i].getElementsByTagName('li')
+                for (j = 0; j < aLi.length; j++) {
+                    arrLi.push(aLi[j])
+                }
+            }
+            for (i = 0; i < arrLi.length; i++) {
+                arrLi[i].onclick = function () {
+                    for (i = 0; i < arrLi.length; i++) {
+                        arrLi[i].className = ''
+                    }
+                    this.className = 'hover'
+                }
+
+            }
+        }
+    </script>
+
+
+</head>
+
+<body>
+    <ul id="list">
+        <li class="lis">
+            <h2>我的好友</h2>
+            <ul>
+                <li>张学友</li>
+                <li>刘德华</li>
+                <li>谭咏麟</li>
+            </ul>
+        </li>
+        <li class="lis">
+            <h2>特别关心</h2>
+            <ul>
+                <li>周杰伦</li>
+                <li>李克勤</li>
+                <li>陈奕迅</li>
+            </ul>
+        </li>
+        <li class="lis">
+            <h2>黑名单</h2>
+            <ul>
+                <li>鹿晗</li>
+                <li>蔡徐坤</li>
+                <li>黄子韬</li>
+                <li>吴亦凡</li>
+            </ul>
+        </li>
+    </ul>
+
+</body>
+
+</html>

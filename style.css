@@ -1,0 +1,43 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+
+#list {
+    border: 1px solid black;
+    width: 300px;
+    margin: 10px auto;
+    font-size: 15px;
+}
+
+#list ul {
+    display: none;
+}
+
+#list h2 {
+    height: 40px;
+    line-height: 38px;
+    background: url(img/1.jpg)no-repeat 5px center rgb(123, 166, 231);
+    text-indent: 30px;
+}
+
+.lis ul li {
+    border-bottom: 1px solid black;
+    text-indent: 30px;
+}
+
+.lis ul li:hover {
+    background: rgb(204, 105, 105);
+}
+
+#list .active {
+    height: 40px;
+    line-height: 38px;
+    background: url(img/2.jpg)no-repeat 5px center rgb(241, 197, 129);
+    text-indent: 30px;
+}
+#list .hover{
+    background: rgb(50, 53, 245);
+}
